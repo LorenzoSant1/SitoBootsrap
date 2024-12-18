@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Socket, TCP e UDP</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+        .navbar-custom {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-custom a,
+        .navbar-custom .home-link {
+            color: #000;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .navbar-custom .home-link {
+            background-color: #e3e3e3;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .navbar-custom a:hover,
+        .navbar-custom .home-link:hover {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .content-section {
+            padding: 40px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom static-top">
+        <div class="container d-flex justify-content-between">
+            <a href="socket-tcp-udp.html" class="home-link" id="tcpUdpLink">Socket, TCP e UDP</a>
+            <div class="links">
+                <a href="index.html">Home Page</a>
+                <a href="modello-iso-osi.html">Socket nel Modello OSI</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-5">Socket, TCP e UDP</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>Protocolli TCP e UDP</h2>
+            <p>
+                I protocolli TCP e UDP operano al livello di trasporto del modello OSI e svolgono un ruolo fondamentale nella gestione delle comunicazioni tra dispositivi in rete. 
+                Entrambi utilizzano **socket** come punto di accesso per l'invio e la ricezione di dati attraverso la rete.
+            </p>
+    
+            <h3>Socket e Protocolli di Trasporto</h3>
+            <p>
+                Le **socket** sono l'interfaccia che le applicazioni utilizzano per comunicare con la rete. Quando un'applicazione deve inviare o ricevere dati, apre una socket e 
+                specifica quale protocollo di trasporto utilizzare: TCP o UDP. Il protocollo scelto determina il comportamento della comunicazione:
+            </p>
+            <ul>
+                <li><strong>Socket TCP:</strong> Creano una connessione stabile tra client e server, garantendo che i dati siano consegnati in modo affidabile e ordinato. Questo è 
+                fondamentale per applicazioni come il web browsing o l'email, dove l'integrità dei dati è prioritaria.</li>
+                <li><strong>Socket UDP:</strong> Permettono la trasmissione di pacchetti senza stabilire una connessione formale, rendendole ideali per applicazioni in tempo reale come 
+                lo streaming video o i giochi online, dove la velocità è più importante dell'affidabilità.</li>
+            </ul>
+    
+            <p>
+                In sintesi, le socket fungono da "porta" attraverso cui le applicazioni accedono ai servizi di trasporto offerti da TCP e UDP, consentendo di scegliere tra affidabilità e velocità a seconda delle esigenze dell'applicazione.
+            </p>
+    
+            <h3>1. TCP (Transmission Control Protocol)</h3>
+            <ul>
+                <li><strong>Connessione Affidabile:</strong> TCP stabilisce una connessione tramite il three-way handshake.</li>
+                <li><strong>Affidabilità:</strong> Garantisce la consegna e l'ordinamento dei dati.</li>
+                <li><strong>Controllo di Flusso e Congestione:</strong> Regola il volume dei dati trasmessi.</li>
+                <li><strong>Ordinamento:</strong> I pacchetti sono consegnati nell'ordine corretto.</li>
+            </ul>
+    
+            <h3>2. UDP (User Datagram Protocol)</h3>
+            <ul>
+                <li><strong>Senza Connessione:</strong> Non richiede la creazione di una connessione.</li>
+                <li><strong>Velocità:</strong> È più rapido e leggero di TCP.</li>
+                <li><strong>Nessuna Garanzia di Consegna:</strong> I pacchetti possono essere persi o arrivare fuori ordine.</li>
+            </ul>
+    
+            <h3>Confronto Diretto TCP vs UDP</h3>
+            <table>
+                <tr>
+                    <th>Caratteristica</th>
+                    <th>TCP</th>
+                    <th>UDP</th>
+                </tr>
+                <tr>
+                    <td>Connessione</td>
+                    <td>Orientato alla connessione</td>
+                    <td>Senza connessione</td>
+                </tr>
+                <tr>
+                    <td>Affidabilità</td>
+                    <td>Garantita</td>
+                    <td>Non garantita</td>
+                </tr>
+                <tr>
+                    <td>Ritrasmissione</td>
+                    <td>Sì</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Velocità</td>
+                    <td>Più lento</td>
+                    <td>Più veloce</td>
+                </tr>
+                <tr>
+                    <td>Ordinamento</td>
+                    <td>Ordinato</td>
+                    <td>Non ordinato</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 h-100 text-center text-lg-start my-auto">
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Santi Lorenzo 5E. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

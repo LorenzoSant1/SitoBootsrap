@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Le Socket</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+        .navbar-custom {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-custom a, .navbar-custom .home-link {
+            color: #000;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .navbar-custom .home-link {
+            background-color: #e3e3e3;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .navbar-custom a:hover, .navbar-custom .home-link:hover {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Modifiche per l'immagine di showcase */
+        .showcase-img {
+            background-size: cover; /* Assicura che l'immagine copra tutta la sezione */
+            background-position: center center; /* Centra l'immagine */
+            height: 100%; /* Rende l'immagine della stessa altezza della sezione */
+            min-height: 300px; /* Imposta una altezza minima */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-custom static-top">
+        <div class="container">
+            <!-- Home Page come testo, non come link -->
+            <span class="home-link" id="homePageLink">Home Page</span>
+            <div>
+                <a href="modello-iso-osi.html">Socket nel Modello OSI</a>
+                <a href="socket-tcp-udp.html">Socket, TCP e UDP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-5">Le Socket</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Icons -->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="bi-lock m-auto text-primary"></i></div>
+                        <h3>Connessione Sicura</h3>
+                        <p class="lead mb-0">Le socket offrono una connessione sicura tra dispositivi, garantendo la protezione dei dati grazie a protocolli come TLS/SSL.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="bi-alarm m-auto text-primary"></i></div>
+                        <h3>Comunicazione in Tempo Reale</h3>
+                        <p class="lead mb-0">Le socket permettono comunicazioni rapide e in tempo reale, fondamentali per app di messaggistica, giochi online e videoconferenze.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="bi-arrow-repeat m-auto text-primary"></i></div>
+                        <h3>Flessibilità dei Protocolli</h3>
+                        <p class="lead mb-0">Supportano vari protocolli come TCP e UDP, adattandosi così a diverse esigenze, da quelle di alta affidabilità a quelle di velocità.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/Socker.png')"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Cosa Sono le Socket?</h2>
+                    <p class="lead mb-0">Una socket è un'interfaccia software che consente a due programmi, potenzialmente su computer diversi, di comunicare tra loro. Immaginate di voler inviare un messaggio dal vostro computer a un altro tramite Internet: una socket stabilisce il canale attraverso cui il messaggio viaggia. Può essere utilizzata in molteplici contesti, dalla navigazione web all'accesso remoto, fino alla messaggistica istantanea.</p>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Funzioni principali delle Socket</h2>
+                    <p class="lead mb-0">Le socket permettono di stabilire connessioni in rete per trasmettere dati in modo sicuro e rapido tra dispositivi diversi. Gestiscono la comunicazione tra applicazioni, sia in modalità TCP (affidabile) che UDP (più veloce, ma meno sicuro), permettendo scambi di dati in tempo reale, come nelle chat online o nei giochi multiplayer.</p>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Utilizzi delle Socket</h2>
+                    <p class="lead mb-0">Le socket sono fondamentali per molte applicazioni moderne. Vengono utilizzate nei server web per gestire le richieste degli utenti, nei protocolli di rete per il trasferimento di file, nella messaggistica istantanea per l'invio di dati, e anche nei sistemi di videoconferenza. In pratica, le socket sono il cuore della comunicazione su Internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 h-100 text-center text-lg-start my-auto">
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Santi Lorenzo 5E. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Collega il file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

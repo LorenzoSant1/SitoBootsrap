@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Modello ISO OSI</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+        .navbar-custom {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-custom a,
+        .navbar-custom .home-link {
+            color: #000;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .navbar-custom .home-link {
+            background-color: #e3e3e3;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .navbar-custom a:hover,
+        .navbar-custom .home-link:hover {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .content-section {
+            padding: 40px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .content-text {
+            flex: 3;
+        }
+
+        .content-image {
+            flex: 1;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom static-top">
+        <div class="container d-flex justify-content-between">
+            <a href="modello-iso-osi.html" class="home-link" id="isoOsiLink">Socket nel Modello OSI</a>
+            <div>
+                <a href="index.html">Home Page</a>
+                <a href="socket-tcp-udp.html">Socket, TCP e UDP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-5">Socket nel Modello OSI</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenuto Principale -->
+    <div class="container">
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Il Modello OSI: Introduzione</h2>
+                <p>Il modello OSI (Open Systems Interconnection) è un framework teorico che descrive come i dati vengono trasmessi da un dispositivo a un altro attraverso una rete, suddividendo il processo in 7 livelli. Ogni livello ha una funzione specifica e interagisce con il livello superiore e inferiore, facilitando la progettazione e la comprensione delle reti.</p>
+                <ul>
+                    <li><strong>Fisico:</strong> Trasmissione di segnali elettrici, ottici o radio.</li>
+                    <li><strong>Data Link:</strong> Controllo dell'accesso al mezzo trasmissivo e rilevamento degli errori.</li>
+                    <li><strong>Rete:</strong> Instradamento dei pacchetti (ad esempio, tramite IP).</li>
+                    <li><strong>Trasporto:</strong> Garantisce la consegna affidabile e l'ordinamento dei dati.</li>
+                    <li><strong>Sessione:</strong> Gestione delle sessioni tra le applicazioni.</li>
+                    <li><strong>Presentazione:</strong> Traduzione dei dati in un formato comprensibile.</li>
+                    <li><strong>Applicazione:</strong> Interfaccia con l'utente e le applicazioni (es. HTTP, FTP).</li>
+                </ul>
+            </div>
+            <div class="content-image">
+                <!-- Cliccando sull'immagine, si aprirà il modal -->
+                <img src="assets/img/osi.png" alt="Modello OSI" class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#osiModal">
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="osiModal" tabindex="-1" aria-labelledby="osiModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="osiModalLabel">Modello OSI</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/img/osi.png" alt="Modello OSI" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Il Livello di Trasporto e il Ruolo delle Socket</h2>
+            <p>Il livello di trasporto (Layer 4) è cruciale perché si occupa di garantire che i dati vengano trasferiti correttamente tra due dispositivi, indipendentemente dal tipo di rete sottostante. Le socket operano principalmente a questo livello e si appoggiano a due protocolli principali:</p>
+            <ul>
+                <li><strong>TCP (Transmission Control Protocol):</strong> Garantisce una comunicazione affidabile e ordinata. Utilizza meccanismi di controllo del flusso e di ritrasmissione in caso di pacchetti persi.</li>
+                <li><strong>UDP (User Datagram Protocol):</strong> È un protocollo non affidabile e senza connessione. Non garantisce l'ordine dei pacchetti né la ritrasmissione, ma è più veloce.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Socket e il Modello OSI</h2>
+            <p>Le socket forniscono un'interfaccia che permette alle applicazioni (livello 7) di comunicare attraverso la rete, utilizzando i servizi offerti dal livello di trasporto (TCP o UDP). Il loro funzionamento può essere descritto come segue:</p>
+            <ul>
+                <li><strong>Creazione della Socket:</strong> L'applicazione crea una socket specificando il protocollo (TCP o UDP) e l'indirizzo di destinazione.</li>
+                <li><strong>Trasferimento dei Dati:</strong> I dati vengono suddivisi in segmenti (TCP) o datagrammi (UDP) e passano attraverso i livelli inferiori del modello OSI.</li>
+                <li><strong>Consegna dei Dati:</strong> I segmenti raggiungono la destinazione, dove vengono riassemblati e consegnati all'applicazione ricevente.</li>
+            </ul>
+            <p>In sintesi, le socket sono fondamentali per mettere in comunicazione il livello applicativo con quello di trasporto, permettendo la creazione di applicazioni di rete come browser, server web e sistemi di messaggistica.</p>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 h-100 text-center text-lg-start my-auto">
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Santi Lorenzo 5E. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
